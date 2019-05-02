@@ -1,0 +1,96 @@
+<mvc:View
+    controllerName="SapUI5Tutorial.Application.Main.views.StartUp.controller.bookstore"
+    height="100%"
+    displayBlock="true"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns="sap.m"
+    xmlns:u="sap.ui.unified"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:grid="sap.ui.layout.cssgrid"
+    xmlns:f="sap.f">
+    <App>
+        <Page showHeader="false">
+            <HBox class="maintrans">
+                <VBox class="book-categoriesleft-style">
+                    <List
+                        items="{path: '/bookcategories'}"
+                        class="listborder sapUiLargeMarginBegin">
+                        <CustomListItem class="bookstorecustomlist-style" alignItems="Center">
+                            <VBox>
+                                <Text text="{title}" class="titlebookstore"/>
+                                <Link text="{booksthat}" class="categorithat"/>
+                                <Link text="{hand}" class="categorihand"/>
+                                <Link text="{latest}" class="categorilatest"/>
+                            </VBox>
+                        </CustomListItem>
+                    </List>
+                    <List items="{path: '/bestauthors'}" class="listborder sapUiLargeMarginBegin">
+                        <CustomListItem class="bestaustoncustomlist-style" alignItems="Center">
+                            <VBox>
+                                <Text text="{title}" class="titlestylebest"/>
+                                <Link text="{jk}" class="jk-style"/>
+                                <Link text="{jane}" class="jane-style"/>
+                                <Link text="{neil}" class="neil-style"/>
+                                <Link text="{ronald}" class="ronald-style"/>
+                                <Link text="{george}" class="george-style"/>
+                            </VBox>
+                        </CustomListItem>
+                    </List>
+                    <List items="{path: '/categories'}" class="listborder sapUiLargeMarginBegin">
+                        <CustomListItem class="bestaustoncustomlist-style" alignItems="Center">
+                            <VBox>
+                                <Text text="{title}" class="titlestylebest"/>
+                                <Link text="{crime}" class="jk-style"/>
+                                <Link text="{romance}" class="jane-style"/>
+                                <Link text="{classic}" class="neil-style"/>
+                                <Link text="{graphic}" class="ronald-style"/>
+                                <Link text="{history}" class="george-style"/>
+                            </VBox>
+                        </CustomListItem>
+                    </List>
+                </VBox>
+                <FlexBox class="book-menu-style">
+                    <l:FixFlex class="" >
+                        <l:fixContent id="bookchange" >
+                            <l:Grid defaultSpan="XL3 L4 M6 S12" hSpacing="0" vSpacing="0">
+                                <HBox class="bookVbox">
+                                    <Image src="{/bookchange/imageLink/}" class="bookImage-style"></Image>
+                                    <VBox>
+                                        <Text text="{/bookchange/title}" class="bookTitle-style"/>
+                                        <Text text="{/bookchange/summary}" class="bookSummary-style"/>
+                                        <Text text="{/bookchange/author}" class="bookAuthor_style"/>
+                                    </VBox>
+                                </HBox>
+                            </l:Grid>
+                        </l:fixContent>
+                        <l:flexContent>
+                            <ScrollContainer
+                                height="100%"
+                                width="100%"
+                                horizontal="false"
+                                vertical="true"
+                                focusable="false"
+                                class="sapUiNoContentPadding">
+                                <l:Grid
+                                    defaultSpan="XL2 L3 M6 S12"
+                                    hSpacing="0"
+                                    vSpacing="0"
+                                    content="{/secondbooksModel}">
+                                    <VBox class="">
+                                        <Image src="{imageLink}" class="secondBooksgridimage-style" press="bookchange"></Image>
+                                        <VBox class="GridVboxSecond">
+                                            <Link text="{title}" class="gridBookTitle_style" press="bookchange"/>
+                                            <Text text="{author}" class="gridBookAuthor_style"/>
+                                        </VBox>
+                                    </VBox>
+                                </l:Grid>
+
+                            </ScrollContainer>
+                        </l:flexContent>
+                    </l:FixFlex>
+                </FlexBox>
+            </HBox>
+        </Page>
+    </App>
+</mvc:View>
